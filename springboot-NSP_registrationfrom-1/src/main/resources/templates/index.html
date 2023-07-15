@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            animation: fade-in 1s ease;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slide-up 1s ease;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        @keyframes slide-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        thead {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody td {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users Details List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Phone</th>
+                <th>Load Value</th>
+                <th>Load Type</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the list of users and display their data -->
+            <tr th:each="user, row : ${users}" th:class="${row.odd} ? 'odd-row' : ''">
+                <td th:text="${user.firstname}"></td>
+                <td th:text="${user.lastname}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.address}"></td>
+                <td th:text="${user.city}"></td>
+                <td th:text="${user.pincode}"></td>
+                <td th:text="${user.phone}"></td>
+                <td th:text="${user.load_value}"></td>
+                <td th:text="${user.load_type}"></td>
+                <td th:text="${user.gender}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

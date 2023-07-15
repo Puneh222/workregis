@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            animation: fade-in 1s ease;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #155724;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: scale-in 1s ease;
+        }
+
+        @keyframes scale-in {
+            0% {
+                transform: scale(0.8);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            animation: slide-up 1s ease;
+        }
+
+        @keyframes slide-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        table th {
+            background-color: #f7f7f9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Successful!</h1>
+        <div class="alert alert-success" role="alert">
+            Congratulations! Your registration was successful.
+        </div>
+        <h3>Registration Details:</h3>
+        <table>
+            <tr>
+                <th>First Name:</th>
+                <td th:text="${user.firstname}"></td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td th:text="${user.lastname}"></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td th:text="${user.email}"></td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td th:text="${user.address}"></td>
+            </tr>
+            <tr>
+                <th>City:</th>
+                <td th:text="${user.city}"></td>
+            </tr>
+            <tr>
+                <th>Pincode:</th>
+                <td th:text="${user.pincode}"></td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td th:text="${user.phone}"></td>
+            </tr>
+            <tr>
+                <th>Load Value:</th>
+                <td th:text="${user.load_value}"></td>
+            </tr>
+            <tr>
+                <th>Load Type:</th>
+                <td th:text="${user.load_type}"></td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td th:text="${user.gender}"></td>
+            </tr>
+        </table>
+    </div>
+
+    
+</body>
+
+</html>
